@@ -4,10 +4,12 @@
 #
 Name     : mvn-checkstyle
 Version  : 6.18
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
 Source0  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
-Source1  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
+Source1  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.jar
+Source2  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.pom
+Source3  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -25,15 +27,22 @@ data components for the mvn-checkstyle package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
 
 
 %files
@@ -41,5 +50,7 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/ch
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.jar
+/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.pom
 /usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
 /usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
