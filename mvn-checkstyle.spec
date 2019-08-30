@@ -4,7 +4,7 @@
 #
 Name     : mvn-checkstyle
 Version  : 6.18
-Release  : 3
+Release  : 4
 URL      : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
 Source0  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.jar
 Source1  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.1.1/checkstyle-6.1.1.jar
@@ -12,6 +12,8 @@ Source2  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.1.1/
 Source3  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
 Source4  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.jar
 Source5  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.pom
+Source6  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.jar
+Source7  : https://repo1.maven.org/maven2/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -52,6 +54,12 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/ch
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.19
 cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -64,3 +72,5 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/puppycrawl/tools/ch
 /usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.18/checkstyle-6.18.pom
 /usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.jar
 /usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.pom
+/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.jar
+/usr/share/java/.m2/repository/com/puppycrawl/tools/checkstyle/8.12/checkstyle-8.12.pom
